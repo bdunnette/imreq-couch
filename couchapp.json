@@ -1,0 +1,4 @@
+{
+    "name": "Imaging Requests",
+    "description": "CouchDB-based pathology image storage."
+}

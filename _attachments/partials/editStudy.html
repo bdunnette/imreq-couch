@@ -9,6 +9,6 @@
     <button class="btn" ng-click="removeClick()">Delete</button>
 </form>
 <div id="attachments"><ul>
-  <li ng-repeat="(filename, attachment) in study._attachments"><a ng-href="/imreq/{{study._id}}/{{filename}}">{{filename}}<img width="60px" ng-if="attachment.content_type.indexOf('image') == 0" ng-src="/imreq/{{study._id}}/{{filename}}"></a></li>
+  <li ng-repeat="(filename, attachment) in study._attachments"><a ng-href="/imreq/{{study._id}}/{{filename}}">{{filename}}</a></li>
   {{page._attachments}}
 </ul></div>

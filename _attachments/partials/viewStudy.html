@@ -1,5 +1,9 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div id="study-info">
+<h2>{{study.accessionNo}}</h2>
+<button class=btn><a ng-href="#/study/{{study._id}}/edit">Edit</a></button>
+</div>
+<div id="attachments">
+  <span class="col-md-2" ng-repeat="(filename, attachment) in study._attachments"><img class="img-responsive" ng-if="attachment.content_type.indexOf('image') == 0" ng-src="/imreq/{{study._id}}/{{filename}}" alt="{{filename}}">
+  </span>
+</div>
+<textarea readonly>{{study}}</textarea>

@@ -1,1 +1,6 @@
-<p>This is the partial for view 1.</p>
+<h2>Available Imaging Studies:</h2>
+<ul>
+    <li ng-repeat="study in imagedb.rows">
+        <a ng-href="#/study/{{study.id}}">{{study.key}}</a>
+    </li>
+</ul>

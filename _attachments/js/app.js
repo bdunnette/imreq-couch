@@ -11,7 +11,15 @@ angular.module('myApp', [
   'CornerCouch'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/study/new', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+  $routeProvider.when('/', {templateUrl: 'partials/listStudies.html', controller: 'ListStudiesCtrl'});
+  $routeProvider.when('/study/new', {templateUrl: 'partials/editStudy.html', controller: 'EditStudyCtrl'});
+  $routeProvider.when('/study/:studyId', {templateUrl: 'partials/viewStudy.html', controller: 'ViewStudyCtrl'});
+  $routeProvider.when('/study/:studyId/edit', {templateUrl: 'partials/editStudy.html', controller: 'EditStudyCtrl'});
+  $routeProvider.otherwise({redirectTo: '/'});
+}])
+.run(function($rootScope, cornercouch) {
+    $rootScope.server = cornercouch();
+    $rootScope.server.session();
+    $rootScope.imagedb = $rootScope.server.getDB('imreq');
+    console.log($rootScope.imagedb);
+});;

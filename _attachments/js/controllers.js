@@ -3,9 +3,12 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
+  .controller('ListStudiesCtrl', ['$scope', function($scope) {
 
   }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
+  .controller('ViewStudyCtrl', ['$scope', function($scope) {
+
+  }])
+  .controller('EditStudyCtrl', ['$scope', function($scope) {
 
   }]);
